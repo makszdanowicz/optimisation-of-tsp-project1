@@ -9,8 +9,15 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 include_directories(include)
 
-add_executable(tsp ../src/main.cpp)
+#add_executable(tsp ../src/main.cpp
+#        src/structures/Matrix.cpp)
 
+# find all .cpp files in src directory
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 
+# create .exe file
+add_executable(tsp ${SOURCES}
+        src/parsers/FileParser.cpp
+        include/FileParser.h)
 
 

@@ -49,12 +49,47 @@ cmake_ninja_workdir = D$:/projekty_Clion_c/optimisation-of-tsp-project1/cmake-bu
 
 build cmake_object_order_depends_target_tsp: phony || CMakeFiles/tsp.dir
 
+build CMakeFiles/tsp.dir/src/algorithms/BruteForceAlgorithm.cpp.obj: CXX_COMPILER__tsp_unscanned_Debug D$:/projekty_Clion_c/optimisation-of-tsp-project1/src/algorithms/BruteForceAlgorithm.cpp || cmake_object_order_depends_target_tsp
+  DEP_FILE = CMakeFiles\tsp.dir\src\algorithms\BruteForceAlgorithm.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/projekty_Clion_c/optimisation-of-tsp-project1/include
+  OBJECT_DIR = CMakeFiles\tsp.dir
+  OBJECT_FILE_DIR = CMakeFiles\tsp.dir\src\algorithms
+
+build CMakeFiles/tsp.dir/src/algorithms/NearestNeighborAlgorithm.cpp.obj: CXX_COMPILER__tsp_unscanned_Debug D$:/projekty_Clion_c/optimisation-of-tsp-project1/src/algorithms/NearestNeighborAlgorithm.cpp || cmake_object_order_depends_target_tsp
+  DEP_FILE = CMakeFiles\tsp.dir\src\algorithms\NearestNeighborAlgorithm.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/projekty_Clion_c/optimisation-of-tsp-project1/include
+  OBJECT_DIR = CMakeFiles\tsp.dir
+  OBJECT_FILE_DIR = CMakeFiles\tsp.dir\src\algorithms
+
+build CMakeFiles/tsp.dir/src/algorithms/RandomAlgorithm.cpp.obj: CXX_COMPILER__tsp_unscanned_Debug D$:/projekty_Clion_c/optimisation-of-tsp-project1/src/algorithms/RandomAlgorithm.cpp || cmake_object_order_depends_target_tsp
+  DEP_FILE = CMakeFiles\tsp.dir\src\algorithms\RandomAlgorithm.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/projekty_Clion_c/optimisation-of-tsp-project1/include
+  OBJECT_DIR = CMakeFiles\tsp.dir
+  OBJECT_FILE_DIR = CMakeFiles\tsp.dir\src\algorithms
+
 build CMakeFiles/tsp.dir/src/main.cpp.obj: CXX_COMPILER__tsp_unscanned_Debug D$:/projekty_Clion_c/optimisation-of-tsp-project1/src/main.cpp || cmake_object_order_depends_target_tsp
   DEP_FILE = CMakeFiles\tsp.dir\src\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -ID:/projekty_Clion_c/optimisation-of-tsp-project1/include
   OBJECT_DIR = CMakeFiles\tsp.dir
   OBJECT_FILE_DIR = CMakeFiles\tsp.dir\src
+
+build CMakeFiles/tsp.dir/src/parsers/FileParser.cpp.obj: CXX_COMPILER__tsp_unscanned_Debug D$:/projekty_Clion_c/optimisation-of-tsp-project1/src/parsers/FileParser.cpp || cmake_object_order_depends_target_tsp
+  DEP_FILE = CMakeFiles\tsp.dir\src\parsers\FileParser.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/projekty_Clion_c/optimisation-of-tsp-project1/include
+  OBJECT_DIR = CMakeFiles\tsp.dir
+  OBJECT_FILE_DIR = CMakeFiles\tsp.dir\src\parsers
+
+build CMakeFiles/tsp.dir/src/structures/Matrix.cpp.obj: CXX_COMPILER__tsp_unscanned_Debug D$:/projekty_Clion_c/optimisation-of-tsp-project1/src/structures/Matrix.cpp || cmake_object_order_depends_target_tsp
+  DEP_FILE = CMakeFiles\tsp.dir\src\structures\Matrix.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -ID:/projekty_Clion_c/optimisation-of-tsp-project1/include
+  OBJECT_DIR = CMakeFiles\tsp.dir
+  OBJECT_FILE_DIR = CMakeFiles\tsp.dir\src\structures
 
 
 # =============================================================================
@@ -64,7 +99,7 @@ build CMakeFiles/tsp.dir/src/main.cpp.obj: CXX_COMPILER__tsp_unscanned_Debug D$:
 #############################################
 # Link the executable tsp.exe
 
-build tsp.exe: CXX_EXECUTABLE_LINKER__tsp_Debug CMakeFiles/tsp.dir/src/main.cpp.obj
+build tsp.exe: CXX_EXECUTABLE_LINKER__tsp_Debug CMakeFiles/tsp.dir/src/algorithms/BruteForceAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/algorithms/NearestNeighborAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/algorithms/RandomAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/main.cpp.obj CMakeFiles/tsp.dir/src/parsers/FileParser.cpp.obj CMakeFiles/tsp.dir/src/structures/Matrix.cpp.obj
   FLAGS = -g
   LINK_FLAGS = -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
