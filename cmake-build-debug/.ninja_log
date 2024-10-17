@@ -1,0 +1,15 @@
+# ninja log v5
+4	896	7508712416859446	CMakeFiles/optimisation_of_tsp_project1.dir/main.cpp.obj	f6f82e8055dade75
+250	2514	7508815683171479	build.ninja	8c38cc81e5e3cf07
+30	750	7508713210898930	CMakeFiles/optimisation_of_tsp_project1.dir/src/main.cpp.obj	2a46ad26acd0221c
+22	153	7508747220305272	CMakeFiles/TSP.dir/src/structures/Matrix.cpp.obj	e0709e69c4175b32
+2	159	7508747220365415	CMakeFiles/TSP.dir/src/algorithms/BruteForceAlgorithm.cpp.obj	b9972758029dc81c
+9	156	7508747220295210	CMakeFiles/TSP.dir/src/algorithms/NearestNeighborAlgorithm.cpp.obj	76d3874b0e755382
+16	161	7508747220345317	CMakeFiles/TSP.dir/src/algorithms/RandomAlgorithm.cpp.obj	6693f168cb11d8fb
+29	833	7508747227166816	CMakeFiles/TSP.dir/src/main.cpp.obj	313f5678409b6a86
+11	426	7508803589735945	TSP.exe	f099cdc3982b039
+1	3858	7508808187029522	CMakeFiles/tsp.exe.dir/src/main.cpp.obj	9dfdbd9ccb51a651
+4	438	7508813455947107	CMakeFiles/tsp.dir/src/main.cpp.obj	51846e0730144b6e
+439	769	7508813459186399	tsp.exe	a72250deb5e907e3
+4	376	7508815709054701	CMakeFiles/tsp.dir/src/main.cpp.obj	39c3dcc3c8cca462
+376	690	7508815712115601	tsp.exe	a72250deb5e907e3
