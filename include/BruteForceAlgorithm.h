@@ -14,11 +14,11 @@ using namespace std;
 class BruteForceAlgorithm {
 private:
     Matrix matrix;
+    bool isNextPermutation(vector<int>& vertices);
+    void reverseVertices(vector<int>& vertices, int start, int end);
 public:
     BruteForceAlgorithm(Matrix matrix); // constructor
     void algorithmSolve();
-    bool isNextPermutation(vector<int>& vertices);
-    void reverseVertices(vector<int>& vertices, int start, int end);
 };
 
 

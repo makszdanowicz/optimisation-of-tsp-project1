@@ -39,3 +39,10 @@
 493	877	7509791545282640	tsp.exe	2337ffba010d4f7c
 5	495	7509791839774059	CMakeFiles/tsp.dir/src/main.cpp.obj	39c3dcc3c8cca462
 495	850	7509791843251171	tsp.exe	2337ffba010d4f7c
+4	511	7509792553806828	CMakeFiles/tsp.dir/src/algorithms/BruteForceAlgorithm.cpp.obj	e368f5e1f7b483a6
+10	538	7509792554093776	CMakeFiles/tsp.dir/src/main.cpp.obj	39c3dcc3c8cca462
+538	902	7509792557667015	tsp.exe	2337ffba010d4f7c
+5	509	7509792708049442	CMakeFiles/tsp.dir/src/main.cpp.obj	39c3dcc3c8cca462
+509	861	7509792711498658	tsp.exe	2337ffba010d4f7c
+3	497	7509792804478739	CMakeFiles/tsp.dir/src/main.cpp.obj	39c3dcc3c8cca462
+498	857	7509792808008492	tsp.exe	2337ffba010d4f7c

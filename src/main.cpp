@@ -9,7 +9,7 @@ int main() {
     FileParser fileParser{};
 
     string basePath = "../data/";
-    string fileName = "matrix_11x11.atsp";
+    string fileName = "matrix_8x8.atsp";
     string filePath = basePath + fileName;
     bool isSymmetric = 0;
     if(fileParser.readFile(filePath)){
