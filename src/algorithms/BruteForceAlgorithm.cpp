@@ -6,29 +6,28 @@
 #include <vector>
 #include <iostream>
 
-
 using namespace std;
 
 BruteForceAlgorithm::BruteForceAlgorithm(Matrix matrix) : matrix(matrix){}
 
 void BruteForceAlgorithm::algorithmSolve() {
-    int size = matrix.getSize();
+    int sizeOfVertices = matrix.getSize();
 
-    vector<int> vertices(size);
-    for(int i = 0; i < size; i++){
+    vector<int> vertices(sizeOfVertices);
+    for(int i = 0; i < sizeOfVertices; i++){
         vertices[i] = i;
     }
 
     int bestCost = INT_MAX;
     do{
         int currentCost = 0;
-        for(int i = 0; i < size - 1; i++){
+        for(int i = 0; i < sizeOfVertices - 1; i++){
             int cost = matrix.getCost(vertices[i], vertices[i+1]);
             if(cost != -1){
                 currentCost += cost;
             }
         }
-        int returnCost = matrix.getCost(vertices[size-1], vertices[0]);
+        int returnCost = matrix.getCost(vertices[sizeOfVertices-1], vertices[0]);
         if(returnCost != -1){
             currentCost += returnCost;
         }

@@ -6,8 +6,17 @@
 #define OPTIMISATION_OF_TSP_PROJECT1_NEARESTNEIGHBORALGORITHM_H
 
 
-class NearestNeighborAlgorithm {
+#include "Matrix.h"
+#include "vector"
 
+using namespace std;
+
+class NearestNeighborAlgorithm {
+private:
+    Matrix matrix;
+public:
+    NearestNeighborAlgorithm(Matrix matrix); // constructor
+    void algorithmSolve();
 };
 
 

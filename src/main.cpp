@@ -2,6 +2,7 @@
 #include "Matrix.h"
 #include "FileParser.h"
 #include "BruteForceAlgorithm.h"
+#include "NearestNeighborAlgorithm.h"
 
 using namespace std;
 int main() {
@@ -9,7 +10,7 @@ int main() {
     FileParser fileParser{};
 
     string basePath = "../data/";
-    string fileName = "matrix_8x8.atsp";
+    string fileName = "matrix_11x11.atsp";
     string filePath = basePath + fileName;
     bool isSymmetric = 0;
     if(fileParser.readFile(filePath)){
@@ -26,8 +27,10 @@ int main() {
         }
         cout << "Is matrix symmetry: " << matrix.isMatrixSymmetric() << endl;
         matrix.printMatrix();
-        BruteForceAlgorithm bruteForce (matrix);
-        bruteForce.algorithmSolve();
+//        BruteForceAlgorithm bruteForce (matrix);
+//        bruteForce.algorithmSolve();
+        NearestNeighborAlgorithm nearestNeighbor(matrix);
+        nearestNeighbor.algorithmSolve();
     }
 
     return 0;
