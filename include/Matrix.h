@@ -5,12 +5,14 @@
 #ifndef OPTIMISATION_OF_TSP_PROJECT1_MATRIX_H
 #define OPTIMISATION_OF_TSP_PROJECT1_MATRIX_H
 
+#include <vector>
+using namespace std;
 
 class Matrix {
 private:
     int size;
     bool isSymmetric;
-    int** costs;
+    vector<vector<int>> costs;
 
 public:
     Matrix(int size, bool isSymmetric); // constructor

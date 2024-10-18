@@ -6,28 +6,10 @@
 #include <iostream>
 
 using namespace std;
-Matrix::Matrix(int size, bool type) {
-    this->size = size;
-    costs = new int*[size]; // creating array of pointers to line
-    for(int i = 0; i < size; i++){
-        costs[i] = new int[size]; // for each line creating an array
-    }
-    isSymmetric = type;
-
-    // initialization of costs array with '0' values
-    for(int i = 0; i < size; i++){
-        for (int j = 0; j < size; j++){
-            costs[i][j] = 0;
-        }
-    }
+Matrix::Matrix(int size, bool type) : size(size), isSymmetric(type), costs(size, std::vector<int>(size, 0)) {
 }
 
 Matrix::~Matrix() {
-    // free up the memory space occupied by the array of costs
-    for(int i = 0; i < size; i++){
-        delete[] costs[i];
-    }
-    delete[] costs;
 }
 
 int Matrix::getCost(int lineIndex, int columnIndex) {
