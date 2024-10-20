@@ -9,41 +9,45 @@
 
 using namespace std;
 
-RandomAlgorithm::RandomAlgorithm(Matrix matrix) : matrix(matrix){}
+RandomAlgorithm::RandomAlgorithm(Matrix matrix) : matrix(matrix){
+    verticesSize = matrix.getSize();
+}
 
 void RandomAlgorithm::algorithmSolve() {
-    int verticesSize = matrix.getSize();
+    // Initializing algorithm values
     vector<bool> isVisitedVertex(verticesSize, false); // contain vertices that is considered and can't be used again in algorithm
-    vector<int> vertices(verticesSize);
-    for(int i = 0; i < verticesSize; i++){
-        vertices[i] = i;
-    }
-
     int pathCost = 0;
-    // Randomly generate start vertex and add it to visited list
-    int firstVertex = randomGenerator();
+    int firstVertex = randomGenerator(); // Randomly generate start vertex and add it to visited list
     int startVertex = firstVertex;
     isVisitedVertex[startVertex] = true;
-    int currentVertex, cost;
+
+    // find random path and count cost
     for(int i = 1; i < verticesSize; i++){
-        currentVertex = -1;
-        cost = 0;
-        // find using random not-visited yet vertex
-        while(currentVertex == -1){
-            int potentialVertex = randomGenerator();
-            // checking conditions, that vertex is not visited and don't have cost -1(it means it goes into itself)
-            if(!isVisitedVertex[potentialVertex]){
-                cost = matrix.getCost(startVertex,potentialVertex);
-                if(cost != -1){currentVertex = potentialVertex;}
-            }
-        }
-        pathCost += cost;
+        int currentVertex = findNotVisitedVertex(startVertex,isVisitedVertex);
+        pathCost += matrix.getCost(startVertex,currentVertex);
         isVisitedVertex[currentVertex] = true;
         startVertex = currentVertex;
     }
     // add cost of returning path to total cost
-    pathCost+=matrix.getCost(currentVertex,firstVertex);
+    pathCost+=matrix.getCost(startVertex,firstVertex);
     cout << "Shortest path: " << pathCost << endl;
+
+}
+
+int RandomAlgorithm::findNotVisitedVertex(int startVertex,vector<bool>& isVisitedVertex) {
+    // reset actual vertex and cost
+    int currentVertex = -1;
+    int cost = 0;
+    // find using random not-visited yet vertex
+    while(currentVertex == -1){
+        int potentialVertex = randomGenerator();
+        // checking conditions, that vertex is not visited and don't have cost -1(it means it goes into itself)
+        if(!isVisitedVertex[potentialVertex]){
+            cost = matrix.getCost(startVertex,potentialVertex);
+            if(cost != -1){currentVertex = potentialVertex;}
+        }
+    }
+    return currentVertex;
 
 }
 
@@ -53,4 +57,5 @@ int RandomAlgorithm::randomGenerator() {
     uniform_int_distribution<> distribution(0,matrix.getSize() - 1); // specified range for generated random numbers
     return distribution(gen); // generates a random integer from the specifed range using MT generator
 }
+
 

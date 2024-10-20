@@ -14,8 +14,12 @@ using namespace std;
 class NearestNeighborAlgorithm {
 private:
     Matrix matrix;
+    int verticesSize;
+    int lastVertex;
+    int findNearestNeighbor(int currentVertex, vector<bool>& visitedVertices);
+    int calculateTotalCost(int startVertex, vector<bool>& visitedVertices);
 public:
-    NearestNeighborAlgorithm(Matrix matrix); // constructor
+    explicit NearestNeighborAlgorithm(Matrix matrix); // constructor
     void algorithmSolve();
 };
 

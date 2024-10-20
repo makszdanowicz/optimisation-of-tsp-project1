@@ -7,14 +7,17 @@
 
 
 #include "Matrix.h"
+#include "vector"
 
 class RandomAlgorithm {
 private:
     Matrix matrix;
+    int verticesSize;
     int randomGenerator();
+    int findNotVisitedVertex(int startVertex,vector<bool>& isVisitedVertex);
+
 public:
-    RandomAlgorithm(Matrix matrix);
-    int generateVertex();
+    explicit RandomAlgorithm(Matrix matrix);
     void algorithmSolve();
 };
 

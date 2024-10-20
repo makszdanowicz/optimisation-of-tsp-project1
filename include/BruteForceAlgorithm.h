@@ -14,10 +14,15 @@ using namespace std;
 class BruteForceAlgorithm {
 private:
     Matrix matrix;
-    bool isNextPermutation(vector<int>& vertices);
+    int verticesSize;
+    vector<int> vertices;
+    vector<int> generateVertices();
+    bool isNextPermutation();
     void reverseVertices(vector<int>& vertices, int start, int end);
+    int findLargestK();
+    int findLargestL(int k);
 public:
-    BruteForceAlgorithm(Matrix matrix); // constructor
+    explicit BruteForceAlgorithm(Matrix matrix); // constructor
     void algorithmSolve();
 };
 
