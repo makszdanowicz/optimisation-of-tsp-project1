@@ -6,8 +6,16 @@
 #define OPTIMISATION_OF_TSP_PROJECT1_RANDOMALGORITHM_H
 
 
-class RandomAlgorithm {
+#include "Matrix.h"
 
+class RandomAlgorithm {
+private:
+    Matrix matrix;
+    int randomGenerator();
+public:
+    RandomAlgorithm(Matrix matrix);
+    int generateVertex();
+    void algorithmSolve();
 };
 
 

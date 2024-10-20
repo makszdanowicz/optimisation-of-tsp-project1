@@ -3,6 +3,7 @@
 #include "FileParser.h"
 #include "BruteForceAlgorithm.h"
 #include "NearestNeighborAlgorithm.h"
+#include "RandomAlgorithm.h"
 
 using namespace std;
 int main() {
@@ -10,7 +11,7 @@ int main() {
     FileParser fileParser{};
 
     string basePath = "../data/";
-    string fileName = "matrix_11x11.atsp";
+    string fileName = "matrix_6x6.atsp";
     string filePath = basePath + fileName;
     bool isSymmetric = 0;
     if(fileParser.readFile(filePath)){
@@ -29,8 +30,10 @@ int main() {
         matrix.printMatrix();
 //        BruteForceAlgorithm bruteForce (matrix);
 //        bruteForce.algorithmSolve();
-        NearestNeighborAlgorithm nearestNeighbor(matrix);
-        nearestNeighbor.algorithmSolve();
+//        NearestNeighborAlgorithm nearestNeighbor(matrix);
+//        nearestNeighbor.algorithmSolve();
+    RandomAlgorithm random(matrix);
+    random.algorithmSolve();
     }
 
     return 0;
