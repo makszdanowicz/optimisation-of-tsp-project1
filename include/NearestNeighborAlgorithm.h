@@ -5,13 +5,13 @@
 #ifndef OPTIMISATION_OF_TSP_PROJECT1_NEARESTNEIGHBORALGORITHM_H
 #define OPTIMISATION_OF_TSP_PROJECT1_NEARESTNEIGHBORALGORITHM_H
 
-
+#include "Algorithm.h"
 #include "Matrix.h"
 #include "vector"
 
 using namespace std;
 
-class NearestNeighborAlgorithm {
+class NearestNeighborAlgorithm : public Algorithm{
 private:
     Matrix matrix;
     int verticesSize;
@@ -20,8 +20,8 @@ private:
     int calculateTotalCost(int startVertex, vector<bool>& visitedVertices);
 public:
     explicit NearestNeighborAlgorithm(Matrix matrix); // constructor
-    void setNewMatrix(const Matrix& newMatrix);
-    void algorithmSolve();
+    void setNewMatrix(const Matrix& newMatrix) override;
+    void algorithmSolve() override;
 };
 
 

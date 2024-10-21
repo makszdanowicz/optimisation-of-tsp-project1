@@ -11,31 +11,33 @@ AlgorithmManager::AlgorithmManager(const ConfigParser &config)
     numberOfInstance(config.getNumberOfInstance()),
     algorithmType(config.getAlgorithmType()) {}
 
+
+
 void AlgorithmManager::runProgram() {
     Matrix matrixFromFile = matrixGenerator.generateMatrixFromFile(inputFilePath);
     if(algorithmType == "bruteForce"){
-        runBruteForceInstance(matrixFromFile);
+        BruteForceAlgorithm bruteForce(matrixFromFile);
+        executeAlgorithm(bruteForce);
     }else if(algorithmType == "nearestNeighbor"){
-        runNearestNeighborInstance(matrixFromFile);
+        NearestNeighborAlgorithm nearestNeighbor(matrixFromFile);
+        executeAlgorithm(nearestNeighbor);
     }
     else if(algorithmType == "randomAlgorithm"){
-        runRandomAlgorithmInstance(matrixFromFile);
-        RandomAlgorithm randomAlgorithm (matrixFromFile);
-        randomAlgorithm.algorithmSolve();
-        cout << endl;
+        RandomAlgorithm randomAlgorithm(matrixFromFile);
+        executeAlgorithm(randomAlgorithm);
     }
 }
 
-void AlgorithmManager::runBruteForceInstance(const Matrix& matrixFromFile) {
-    // performing test
-    BruteForceAlgorithm bruteForce(matrixFromFile);
-    bruteForce.algorithmSolve();
+void AlgorithmManager::executeAlgorithm(Algorithm &algorithm) {
+    // performing test to algorithm
+    algorithm.algorithmSolve();
     cout << endl;
+
     for(int i = 0; i < numberOfInstance; i++){
         Matrix newMatrix = matrixGenerator.generateRandomMatrix();
-        bruteForce.setNewMatrix(newMatrix);
+        algorithm.setNewMatrix(newMatrix);
         auto start = chrono::high_resolution_clock::now(); // start of time measurement
-        bruteForce.algorithmSolve();
+        algorithm.algorithmSolve();
         auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
         auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
         cout << "algorithm execution time: " << duration.count() << " ms" << endl;
@@ -43,41 +45,5 @@ void AlgorithmManager::runBruteForceInstance(const Matrix& matrixFromFile) {
     }
 }
 
-void AlgorithmManager::runNearestNeighborInstance(const Matrix& matrixFromFile) {
-    // performing test
-    NearestNeighborAlgorithm nearestNeighbor(matrixFromFile);
-    nearestNeighbor.algorithmSolve();
-    cout << endl;
-    for(int i = 0; i < numberOfInstance; i++){
-        Matrix newMatrix = matrixGenerator.generateRandomMatrix();
-        nearestNeighbor.setNewMatrix(newMatrix);
-        auto start = chrono::high_resolution_clock::now(); // start of time measurement
-        nearestNeighbor.algorithmSolve();
-        auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
-        auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
-        cout << "algorithm execution time: " << duration.count() << " ms" << endl;
-        cout << endl;
-
-    }
-
-}
-
-void AlgorithmManager::runRandomAlgorithmInstance(const Matrix& matrixFromFile) {
-    // performing test
-    RandomAlgorithm randomAlgorithm(matrixFromFile);
-    randomAlgorithm.algorithmSolve();
-    cout << endl;
-    for(int i = 0; i < numberOfInstance; i++){
-        Matrix newMatrix = matrixGenerator.generateRandomMatrix();
-        randomAlgorithm.setNewMatrix(newMatrix);
-        auto start = chrono::high_resolution_clock::now(); // start of time measurement
-        randomAlgorithm.algorithmSolve();
-        auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
-        auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
-        cout << "algorithm execution time: " << duration.count() << " ms" << endl;
-        cout << endl;
-    }
-
-}
 
 

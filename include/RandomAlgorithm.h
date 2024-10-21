@@ -5,11 +5,11 @@
 #ifndef OPTIMISATION_OF_TSP_PROJECT1_RANDOMALGORITHM_H
 #define OPTIMISATION_OF_TSP_PROJECT1_RANDOMALGORITHM_H
 
-
+#include "Algorithm.h"
 #include "Matrix.h"
 #include "vector"
 
-class RandomAlgorithm {
+class RandomAlgorithm : public Algorithm{
 private:
     Matrix matrix;
     int verticesSize;
@@ -18,8 +18,8 @@ private:
 
 public:
     explicit RandomAlgorithm(Matrix matrix);
-    void setNewMatrix(const Matrix& newMatrix);
-    void algorithmSolve();
+    void setNewMatrix(const Matrix& newMatrix) override;
+    void algorithmSolve() override;
 };
 
 

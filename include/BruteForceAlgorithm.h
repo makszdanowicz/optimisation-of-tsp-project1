@@ -5,13 +5,13 @@
 #ifndef OPTIMISATION_OF_TSP_PROJECT1_BRUTEFORCEALGORITHM_H
 #define OPTIMISATION_OF_TSP_PROJECT1_BRUTEFORCEALGORITHM_H
 
-
+#include "Algorithm.h"
 #include "Matrix.h"
 #include "vector"
 
 using namespace std;
 
-class BruteForceAlgorithm {
+class BruteForceAlgorithm : public Algorithm{
 private:
     Matrix matrix;
     int verticesSize;
@@ -23,8 +23,8 @@ private:
     int findLargestL(int k);
 public:
     explicit BruteForceAlgorithm(Matrix matrix); // constructor
-    void algorithmSolve();
-    void setNewMatrix(const Matrix& newMatrix);
+    void algorithmSolve() override;
+    void setNewMatrix(const Matrix& newMatrix) override;
 };
 
 

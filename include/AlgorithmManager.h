@@ -22,9 +22,8 @@ private:
     string outputFilePath;
     string algorithmType;
     int numberOfInstance;
-    void runBruteForceInstance(const Matrix& matrixFromFile);
-    void runNearestNeighborInstance(const Matrix& matrixFromFile);
-    void runRandomAlgorithmInstance(const Matrix& matrixFromFile);
+    void executeAlgorithm(Algorithm& algorithm);
+
 public:
     AlgorithmManager(const ConfigParser& config);
     void runProgram();

@@ -34,7 +34,8 @@ add_executable(tsp ${SOURCES}
         src/parsers/ConfigParser.cpp
         include/ConfigParser.h
         src/algorithms/AlgorithmManager.cpp
-        include/AlgorithmManager.h)
+        include/AlgorithmManager.h
+        include/Algorithm.h)
 
 # linking json library to project
 target_link_libraries(tsp nlohmann_json::nlohmann_json)
