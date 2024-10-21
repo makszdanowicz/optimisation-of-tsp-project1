@@ -35,19 +35,29 @@ void AlgorithmManager::executeAlgorithm(Algorithm &algorithm) {
     cout << endl;
 
     FileParser fileParser;
+    long long arithmeticSum = 0;
+    int instanceSize;
     fileParser.openFile(outputFilePath);
+
     for(int i = 0; i < numberOfInstance; i++){
         Matrix newMatrix = matrixGenerator.generateRandomMatrix();
+        instanceSize = newMatrix.getSize();
         algorithm.setNewMatrix(newMatrix);
+        cout << "ITERATION NUMBER: " << i << endl;
         auto start = chrono::high_resolution_clock::now(); // start of time measurement
         algorithm.algorithmSolve();
         auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
         auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
-        cout << "algorithm execution time: " << duration.count() << " ms" << endl;
-        fileParser.saveValueToFile(duration.count());
+        long long  time = duration.count();
+        arithmeticSum += time;
+        cout << "algorithm execution time: " << time << " ms" << endl;
+        fileParser.saveValueToFile(time);
         cout << endl;
     }
     fileParser.closeFile();
+    cout << "Instance size of actual analyzing instance: " << instanceSize << endl;
+    double arithmeticAverage = static_cast<double>(arithmeticSum) / numberOfInstance;
+    cout << "Arithmetic average of times for a given instance size: " << arithmeticAverage << "[ms]" << endl;
 }
 
 

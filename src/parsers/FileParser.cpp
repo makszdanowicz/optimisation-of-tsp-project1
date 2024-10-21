@@ -48,7 +48,7 @@ void FileParser::openFile(std::string filename) {
     }
 }
 
-void FileParser::saveValueToFile(double valueToSave) {
+void FileParser::saveValueToFile(long long valueToSave) {
     if(outputFile.is_open()){
         outputFile << valueToSave << endl;
     }

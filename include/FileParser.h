@@ -26,7 +26,7 @@ public:
     bool readDataFromFile(const string& filename);
 
     void openFile(string filename);
-    void saveValueToFile(double valueToSave);
+    void saveValueToFile(long long valueToSave);
     void closeFile();
 
 
