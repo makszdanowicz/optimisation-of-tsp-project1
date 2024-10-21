@@ -17,7 +17,7 @@ void RandomAlgorithm::algorithmSolve() {
     // Initializing algorithm values
     vector<bool> isVisitedVertex(verticesSize, false); // contain vertices that is considered and can't be used again in algorithm
     int pathCost = 0;
-    int firstVertex = randomGenerator(); // Randomly generate start vertex and add it to visited list
+    int firstVertex = randomGenerateVertex(); // Randomly generate start vertex and add it to visited list
     int startVertex = firstVertex;
     isVisitedVertex[startVertex] = true;
 
@@ -40,7 +40,7 @@ int RandomAlgorithm::findNotVisitedVertex(int startVertex,vector<bool>& isVisite
     int cost = 0;
     // find using random not-visited yet vertex
     while(currentVertex == -1){
-        int potentialVertex = randomGenerator();
+        int potentialVertex = randomGenerateVertex();
         // checking conditions, that vertex is not visited and don't have cost -1(it means it goes into itself)
         if(!isVisitedVertex[potentialVertex]){
             cost = matrix.getCost(startVertex,potentialVertex);
@@ -51,7 +51,7 @@ int RandomAlgorithm::findNotVisitedVertex(int startVertex,vector<bool>& isVisite
 
 }
 
-int RandomAlgorithm::randomGenerator() {
+int RandomAlgorithm::randomGenerateVertex() {
     random_device randomDevice; // the object that generate random seed using random number generator on the CPU
     mt19937 gen(randomDevice()); // implementation of Mersenne Twister algorithm, which uses seed, that was generated from randomDevice
     uniform_int_distribution<> distribution(0,matrix.getSize() - 1); // specified range for generated random numbers

@@ -13,7 +13,7 @@ class RandomAlgorithm {
 private:
     Matrix matrix;
     int verticesSize;
-    int randomGenerator();
+    int randomGenerateVertex();
     int findNotVisitedVertex(int startVertex,vector<bool>& isVisitedVertex);
 
 public:

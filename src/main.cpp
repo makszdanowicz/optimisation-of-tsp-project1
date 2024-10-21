@@ -4,37 +4,24 @@
 #include "BruteForceAlgorithm.h"
 #include "NearestNeighborAlgorithm.h"
 #include "RandomAlgorithm.h"
+#include "chrono"
+#include "MatrixGenerator.h"
 
 using namespace std;
 int main() {
-    int size;
-    FileParser fileParser{};
-
     string basePath = "../data/";
-    string fileName = "matrix_8x8.atsp";
+    string fileName = "matrix_6x6.atsp";
     string filePath = basePath + fileName;
-    bool isSymmetric = 0;
-    if(fileParser.readFile(filePath)){
-        cout << "file is exists and opened" << endl;
-        size = fileParser.getSizeOfMatrix();
-        Matrix matrix(size, isSymmetric);
-        vector<vector<int>> costsFromFile = fileParser.getCostsFromFile();
-        // Iterowanie przez macierz
-        for (int i = 0; i < costsFromFile.size(); ++i) {             // Przechodzenie przez wiersze
-            for (int j = 0; j < costsFromFile[i].size(); ++j) {       // Przechodzenie przez kolumny
-                int cost = costsFromFile[i][j];                       // Pobranie wartości (kosztu)
-                matrix.setCost(i,j,cost);
-            }
-        }
-        cout << "Is matrix symmetry: " << matrix.isMatrixSymmetric() << endl;
-        matrix.printMatrix();
-        BruteForceAlgorithm bruteForce (matrix);
-        bruteForce.algorithmSolve();
-//        NearestNeighborAlgorithm nearestNeighbor(matrix);
-//        nearestNeighbor.algorithmSolve();
-//    RandomAlgorithm random(matrix);
-//    random.algorithmSolve();
-    }
+    MatrixGenerator matrixGenerator (8,0,100,1);
+    Matrix matrix = matrixGenerator.generateRandomMatrix();
+    //Matrix matrix = MatrixGenerator::generateMatrixFromFile(filePath);
+    BruteForceAlgorithm bruteForce (matrix);
+    auto start = chrono::high_resolution_clock::now(); // start of time measurement
+    bruteForce.algorithmSolve();
+    auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
+    auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
+    cout << "algorithm execution time: " << duration.count() << " ms" << endl;
+
 
     return 0;
 }

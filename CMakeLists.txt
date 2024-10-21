@@ -18,6 +18,8 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 # create .exe file
 add_executable(tsp ${SOURCES}
         src/parsers/FileParser.cpp
-        include/FileParser.h)
+        include/FileParser.h
+        src/structures/MatrixGenerator.cpp
+        include/MatrixGenerator.h)
 
 
