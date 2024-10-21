@@ -3,9 +3,6 @@
 //
 
 #include "../../include/RandomAlgorithm.h"
-#include "vector"
-#include "iostream"
-#include "random"
 
 using namespace std;
 

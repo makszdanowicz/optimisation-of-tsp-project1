@@ -3,8 +3,6 @@
 //
 
 #include "../../include/NearestNeighborAlgorithm.h"
-#include <vector>
-#include <iostream>
 
 using namespace std;
 

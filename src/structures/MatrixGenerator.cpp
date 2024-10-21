@@ -13,7 +13,7 @@ MatrixGenerator::MatrixGenerator(int sizeOfGeneratedMatrix, int generatedMinValu
 Matrix MatrixGenerator::generateMatrixFromFile(string filePath) {
     FileParser fileParser{};
     // Reading data from file to generate matrix
-    if(fileParser.readFile(filePath)){
+    if(fileParser.readDataFromFile(filePath)){
         cout << "file is exists and opened" << endl;
         int size = fileParser.getSizeOfMatrix();
         Matrix matrix(size, isSymmetric);

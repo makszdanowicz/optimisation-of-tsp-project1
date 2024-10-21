@@ -3,7 +3,6 @@
 //
 
 #include "../../include/Matrix.h"
-#include <iostream>
 
 using namespace std;
 Matrix::Matrix(int size, bool type) : size(size), isSymmetric(type), costs(size, std::vector<int>(size, 0)) {

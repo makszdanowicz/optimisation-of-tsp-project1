@@ -22,10 +22,11 @@ void AlgorithmManager::runProgram() {
         NearestNeighborAlgorithm nearestNeighbor(matrixFromFile);
         executeAlgorithm(nearestNeighbor);
     }
-    else if(algorithmType == "randomAlgorithm"){
+    else if(algorithmType == "random"){
         RandomAlgorithm randomAlgorithm(matrixFromFile);
         executeAlgorithm(randomAlgorithm);
     }
+    else{cout << "wrong typed name of algorithm" << endl;}
 }
 
 void AlgorithmManager::executeAlgorithm(Algorithm &algorithm) {
@@ -33,6 +34,8 @@ void AlgorithmManager::executeAlgorithm(Algorithm &algorithm) {
     algorithm.algorithmSolve();
     cout << endl;
 
+    FileParser fileParser;
+    fileParser.openFile(outputFilePath);
     for(int i = 0; i < numberOfInstance; i++){
         Matrix newMatrix = matrixGenerator.generateRandomMatrix();
         algorithm.setNewMatrix(newMatrix);
@@ -41,8 +44,10 @@ void AlgorithmManager::executeAlgorithm(Algorithm &algorithm) {
         auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
         auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
         cout << "algorithm execution time: " << duration.count() << " ms" << endl;
+        fileParser.saveValueToFile(duration.count());
         cout << endl;
     }
+    fileParser.closeFile();
 }
 
 

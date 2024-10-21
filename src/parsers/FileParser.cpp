@@ -3,15 +3,10 @@
 //
 
 #include "FileParser.h"
-#include <iostream>
-#include <string>
-#include <vector>
-#include <fstream>
-#include <sstream>
 
 
 
-bool FileParser::readFile(std::string filename) {
+bool FileParser::readDataFromFile(const string& filename) {
     ifstream file(filename);
     string lineFromFile;
     if(!file.is_open()){
@@ -44,4 +39,23 @@ const vector<vector<int>> &FileParser::getCostsFromFile() const {
 
 int FileParser::getSizeOfMatrix() const {
     return sizeOfMatrix;
+}
+
+void FileParser::openFile(std::string filename) {
+    outputFile.open(filename,ios::app); // open file in append mode
+    if(!outputFile.is_open()){
+        cout << "The wrong name of outputPath" << endl;
+    }
+}
+
+void FileParser::saveValueToFile(double valueToSave) {
+    if(outputFile.is_open()){
+        outputFile << valueToSave << endl;
+    }
+}
+
+void FileParser::closeFile() {
+    if(outputFile.is_open()){
+        outputFile.close();
+    }
 }

@@ -8,6 +8,8 @@
 #include "Algorithm.h"
 #include "Matrix.h"
 #include "vector"
+#include "iostream"
+#include "random"
 
 class RandomAlgorithm : public Algorithm{
 private:

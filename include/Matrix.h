@@ -6,6 +6,7 @@
 #define OPTIMISATION_OF_TSP_PROJECT1_MATRIX_H
 
 #include <vector>
+#include <iostream>
 using namespace std;
 
 class Matrix {

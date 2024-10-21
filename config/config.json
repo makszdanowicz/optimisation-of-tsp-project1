@@ -1,6 +1,6 @@
 {
-  "inputFilePath": "../data/matrix_6x6.atsp",
-  "outputFilePath": "../results/",
+  "inputFilePath": "../data/matrix_8x8.atsp",
+  "outputFilePath": "../results/result.csv",
   "matrix": {
     "size": 8,
     "minValueToGenerate" : 0,

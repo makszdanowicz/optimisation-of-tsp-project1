@@ -8,6 +8,7 @@
 #include "Algorithm.h"
 #include "Matrix.h"
 #include "vector"
+#include <iostream>
 
 using namespace std;
 
