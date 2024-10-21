@@ -12,6 +12,11 @@ NearestNeighborAlgorithm::NearestNeighborAlgorithm(Matrix matrix): matrix(matrix
     verticesSize = matrix.getSize();
 }
 
+void NearestNeighborAlgorithm::setNewMatrix(const Matrix &newMatrix) {
+    this->matrix = newMatrix;
+    this->verticesSize = matrix.getSize();
+}
+
 void NearestNeighborAlgorithm::algorithmSolve() {
     int bestCost = INT_MAX;
     // Checking the minimal cost for travelling for each vertex

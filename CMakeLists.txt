@@ -32,7 +32,9 @@ add_executable(tsp ${SOURCES}
         src/structures/MatrixGenerator.cpp
         include/MatrixGenerator.h
         src/parsers/ConfigParser.cpp
-        include/ConfigParser.h)
+        include/ConfigParser.h
+        src/algorithms/AlgorithmManager.cpp
+        include/AlgorithmManager.h)
 
 # linking json library to project
 target_link_libraries(tsp nlohmann_json::nlohmann_json)

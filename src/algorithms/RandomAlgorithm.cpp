@@ -13,6 +13,11 @@ RandomAlgorithm::RandomAlgorithm(Matrix matrix) : matrix(matrix){
     verticesSize = matrix.getSize();
 }
 
+void RandomAlgorithm::setNewMatrix(const Matrix &newMatrix) {
+    this->matrix = newMatrix;
+    this->verticesSize = matrix.getSize();
+}
+
 void RandomAlgorithm::algorithmSolve() {
     // Initializing algorithm values
     vector<bool> isVisitedVertex(verticesSize, false); // contain vertices that is considered and can't be used again in algorithm

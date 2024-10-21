@@ -24,6 +24,7 @@ private:
 public:
     explicit BruteForceAlgorithm(Matrix matrix); // constructor
     void algorithmSolve();
+    void setNewMatrix(const Matrix& newMatrix);
 };
 
 

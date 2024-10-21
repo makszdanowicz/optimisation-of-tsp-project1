@@ -18,6 +18,7 @@ private:
 
 public:
     explicit RandomAlgorithm(Matrix matrix);
+    void setNewMatrix(const Matrix& newMatrix);
     void algorithmSolve();
 };
 

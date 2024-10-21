@@ -13,6 +13,12 @@ BruteForceAlgorithm::BruteForceAlgorithm(Matrix matrix) : matrix(matrix){
     vertices = generateVertices();
 }
 
+void BruteForceAlgorithm::setNewMatrix(const Matrix& newMatrix) {
+    this->matrix = newMatrix; // actualizing matrix
+    this->verticesSize = matrix.getSize();  // actualizing vertices size
+    this->vertices = generateVertices();    // actualizing vertices list
+}
+
 void BruteForceAlgorithm::algorithmSolve() {
     int bestCost = INT_MAX;
     do{

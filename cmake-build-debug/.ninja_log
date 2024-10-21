@@ -1,6 +1,6 @@
 # ninja log v5
 4	896	7508712416859446	CMakeFiles/optimisation_of_tsp_project1.dir/main.cpp.obj	f6f82e8055dade75
-250	2514	7512320760483157	build.ninja	8c38cc81e5e3cf07
+2	1032	7512375687950989	build.ninja	8c38cc81e5e3cf07
 30	750	7508713210898930	CMakeFiles/optimisation_of_tsp_project1.dir/src/main.cpp.obj	2a46ad26acd0221c
 22	153	7508747220305272	CMakeFiles/TSP.dir/src/structures/Matrix.cpp.obj	e0709e69c4175b32
 2	159	7508747220365415	CMakeFiles/TSP.dir/src/algorithms/BruteForceAlgorithm.cpp.obj	b9972758029dc81c
@@ -9,18 +9,12 @@
 29	833	7508747227166816	CMakeFiles/TSP.dir/src/main.cpp.obj	313f5678409b6a86
 11	426	7508803589735945	TSP.exe	f099cdc3982b039
 1	3858	7508808187029522	CMakeFiles/tsp.exe.dir/src/main.cpp.obj	9dfdbd9ccb51a651
-7	1758	7512301173642703	CMakeFiles/tsp.dir/src/main.cpp.obj	a6f90388fb25848a
-1758	2596	7512301181939778	tsp.exe	1d71546b46fad0bd
-17	1496	7512298507764889	CMakeFiles/tsp.dir/src/algorithms/RandomAlgorithm.cpp.obj	83a5e399334beffc
+15	1917	7512361766806108	CMakeFiles/tsp.dir/src/main.cpp.obj	a6f90388fb25848a
+1917	2844	7512361776003436	tsp.exe	1d71546b46fad0bd
+10	927	7512361756900407	CMakeFiles/tsp.dir/src/algorithms/RandomAlgorithm.cpp.obj	83a5e399334beffc
 38	1243	7512298505226286	CMakeFiles/tsp.dir/src/structures/Matrix.cpp.obj	9fcd188e467eb4e5
 32	1196	7512298504693441	CMakeFiles/tsp.dir/src/parsers/FileParser.cpp.obj	dd916f9be973fbf6
-5	1228	7512298505063290	CMakeFiles/tsp.dir/src/algorithms/BruteForceAlgorithm.cpp.obj	69a6972c39911444
-12	1346	7512298506254347	CMakeFiles/tsp.dir/src/algorithms/NearestNeighborAlgorithm.cpp.obj	cac7f91713480234
+12	1208	7512357423438058	CMakeFiles/tsp.dir/src/algorithms/BruteForceAlgorithm.cpp.obj	69a6972c39911444
+5	806	7512361755683491	CMakeFiles/tsp.dir/src/algorithms/NearestNeighborAlgorithm.cpp.obj	cac7f91713480234
 42	1173	7512298504483379	CMakeFiles/tsp.dir/src/structures/MatrixGenerator.cpp.obj	eb448a10ff27ae3a
-27	3921	7512298531942594	CMakeFiles/tsp.dir/src/parsers/ConfigParser.cpp.obj	1f699a7d97302c88
-2	1032	7512320760483157	build.ninja	8c38cc81e5e3cf07
-20	1763	7512320778714608	CMakeFiles/tsp.dir/src/main.cpp.obj	a6f90388fb25848a
 23	2845	7512320789457442	CMakeFiles/tsp.dir/src/parsers/ConfigParser.cpp.obj	1f699a7d97302c88
-2845	3689	7512320797831507	tsp.exe	1d71546b46fad0bd
-5	1758	7512321496654038	CMakeFiles/tsp.dir/src/main.cpp.obj	a6f90388fb25848a
-1759	2616	7512321505108602	tsp.exe	1d71546b46fad0bd

@@ -20,6 +20,7 @@ private:
     int calculateTotalCost(int startVertex, vector<bool>& visitedVertices);
 public:
     explicit NearestNeighborAlgorithm(Matrix matrix); // constructor
+    void setNewMatrix(const Matrix& newMatrix);
     void algorithmSolve();
 };
 
