@@ -1,0 +1,12 @@
+{
+  "inputFilePath": "../data/matrix_6x6.atsp",
+  "outputFilePath": "../results/",
+  "matrix": {
+    "size": 8,
+    "minValueToGenerate" : 0,
+    "maxValueToGenerate" : 100,
+    "isSymmetric" : false
+  },
+  "algorithm": "bruteForce",
+  "numberOfInstance": 100
+}

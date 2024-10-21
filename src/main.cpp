@@ -6,22 +6,38 @@
 #include "RandomAlgorithm.h"
 #include "chrono"
 #include "MatrixGenerator.h"
+#include "ConfigParser.h"
 
 using namespace std;
 int main() {
-    string basePath = "../data/";
-    string fileName = "matrix_6x6.atsp";
-    string filePath = basePath + fileName;
-    MatrixGenerator matrixGenerator (8,0,100,1);
-    Matrix matrix = matrixGenerator.generateRandomMatrix();
-    //Matrix matrix = MatrixGenerator::generateMatrixFromFile(filePath);
-    BruteForceAlgorithm bruteForce (matrix);
-    auto start = chrono::high_resolution_clock::now(); // start of time measurement
-    bruteForce.algorithmSolve();
-    auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
-    auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
-    cout << "algorithm execution time: " << duration.count() << " ms" << endl;
+    ConfigParser configParser("../config/config.json");
+    if(configParser.readConfig()){
+        string inputFilePath = configParser.getInputFilePath();
+        string outputFilePath = configParser.getOutputFilePath();
+        int matrixSize = configParser.getMatrixSize();
+        int minValueToGenerate = configParser.getMinValueToGenerate();
+        int maxValueToGenerate = configParser.getMaxValueToGenerate();
+        bool isSymmetric = configParser.isSymmetric1();
+        string algorithmType = configParser.getAlgorithmType();
+        int numberOfInstance = configParser.getNumberOfInstance();
 
+        MatrixGenerator matrixGenerator (matrixSize,minValueToGenerate, maxValueToGenerate, isSymmetric);
+        Matrix matrixFromFile = matrixGenerator.generateMatrixFromFile(inputFilePath);
+        BruteForceAlgorithm bruteForceAlgorithm (matrixFromFile);
+        bruteForceAlgorithm.algorithmSolve();
+        cout << endl;
 
+        Matrix matrix = matrixGenerator.generateRandomMatrix();
+        BruteForceAlgorithm bruteForce (matrix);
+        auto start = chrono::high_resolution_clock::now(); // start of time measurement
+        bruteForce.algorithmSolve();
+        auto stop = chrono::high_resolution_clock::now(); // stop of time measurement
+        auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); // calculating of the time difference
+        cout << "algorithm execution time: " << duration.count() << " ms" << endl;
+
+    }else{
+        cout << "Failed to read configuration file" << endl;
+
+    }
     return 0;
 }
