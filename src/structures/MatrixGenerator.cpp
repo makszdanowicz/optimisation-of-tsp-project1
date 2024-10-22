@@ -25,8 +25,10 @@ Matrix MatrixGenerator::generateMatrixFromFile(string filePath) {
                 matrix.setCost(i,j,cost);
             }
         }
+
         cout << "Is matrix symmetry: " << matrix.isMatrixSymmetric() << endl;
         matrix.printMatrix();
+
         return matrix;
     }
 }
@@ -38,7 +40,9 @@ Matrix MatrixGenerator::generateRandomMatrix() {
     }else{
         generateAsymmetricMatrix(matrix);
     }
+    /*
     matrix.printMatrix();
+     */
     return matrix;
 
 }

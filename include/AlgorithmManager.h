@@ -22,7 +22,12 @@ private:
     string outputFilePath;
     string algorithmType;
     int numberOfInstance;
+    bool showProgress;
     void executeAlgorithm(Algorithm& algorithm);
+    long long measureExecutionTime(Algorithm& algorithm);
+    void outputIterationInfo(int iterationNumber, long long executionTime);
+    void displayResultOfInstance(long long arithmeticSum, int instanceSize);
+    void updateProgressBar(int currentInstance, int totalInstances);
 
 public:
     AlgorithmManager(const ConfigParser& config);

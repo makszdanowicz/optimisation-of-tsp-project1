@@ -26,6 +26,7 @@ bool ConfigParser::readConfig() {
         isSymmetric = j.at("matrix").at("isSymmetric").get<bool>();
         algorithmType = j.at("algorithm").get<string>();
         numberOfInstance = j.at("numberOfInstance").get<int>();
+        showProgress = j.at("showProgress").get<bool>();
 
     } catch (json::exception& e) {
         cerr << "JSON parsing error: " << e.what() << endl;
@@ -67,3 +68,8 @@ const string &ConfigParser::getAlgorithmType() const {
 int ConfigParser::getNumberOfInstance() const {
     return numberOfInstance;
 }
+
+bool ConfigParser::isShowProgress() const {
+    return showProgress;
+}
+

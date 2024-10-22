@@ -22,6 +22,7 @@ private:
     bool isSymmetric;
     string algorithmType;
     int numberOfInstance;
+    bool showProgress;
 public:
     explicit ConfigParser(const string &configPath);
     bool readConfig();
@@ -33,6 +34,8 @@ public:
     bool isSymmetric1() const;
     const string &getAlgorithmType() const;
     int getNumberOfInstance() const;
+
+    bool isShowProgress() const;
 };
 
 

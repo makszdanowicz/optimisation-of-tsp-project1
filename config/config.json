@@ -8,5 +8,6 @@
     "isSymmetric" : false
   },
   "algorithm": "bruteForce",
-  "numberOfInstance": 100
+  "numberOfInstance": 100,
+  "showProgress" : true
 }
