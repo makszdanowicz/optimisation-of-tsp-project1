@@ -25,6 +25,8 @@ FetchContent_MakeAvailable(json)
 # find all .cpp files in src directory
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 # create .exe file
 add_executable(tsp ${SOURCES}
         src/parsers/FileParser.cpp
@@ -39,3 +41,4 @@ add_executable(tsp ${SOURCES}
 
 # linking json library to project
 target_link_libraries(tsp nlohmann_json::nlohmann_json)
+

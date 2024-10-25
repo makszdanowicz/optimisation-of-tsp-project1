@@ -2,10 +2,10 @@
   "inputFilePath": "../data/matrix_8x8.atsp",
   "outputFilePath": "../results/result.csv",
   "matrix": {
-    "size": 8,
+    "size":9,
     "minValueToGenerate" : 0,
     "maxValueToGenerate" : 100,
-    "isSymmetric" : false
+    "isSymmetric" : true
   },
   "algorithm": "bruteForce",
   "numberOfInstance": 100,

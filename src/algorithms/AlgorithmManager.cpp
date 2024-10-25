@@ -4,6 +4,7 @@
 
 #include "AlgorithmManager.h"
 
+
 AlgorithmManager::AlgorithmManager(const ConfigParser &config)
     :matrixGenerator(config.getMatrixSize(), config.getMinValueToGenerate(), config.getMaxValueToGenerate(), config.isSymmetric1()),
     inputFilePath(config.getInputFilePath()),
@@ -61,9 +62,7 @@ void AlgorithmManager::executeAlgorithm(Algorithm &algorithm) {
         if(showProgress){
             cout << endl;
             updateProgressBar(i + 1, numberOfInstance);
-
         }
-
 
     }
     fileParser.closeFile();
@@ -104,4 +103,3 @@ void AlgorithmManager::updateProgressBar(int currentInstance, int totalInstances
     cout << endl;
     cout.flush(); // Ensure the output is displayed immediately
 }
-

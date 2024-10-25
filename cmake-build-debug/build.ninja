@@ -118,16 +118,16 @@ build CMakeFiles/tsp.dir/src/structures/MatrixGenerator.cpp.obj: CXX_COMPILER__t
 
 
 #############################################
-# Link the executable tsp.exe
+# Link the executable D:\projekty_Clion_c\optimisation-of-tsp-project1\bin\tsp.exe
 
-build tsp.exe: CXX_EXECUTABLE_LINKER__tsp_Debug CMakeFiles/tsp.dir/src/algorithms/AlgorithmManager.cpp.obj CMakeFiles/tsp.dir/src/algorithms/BruteForceAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/algorithms/NearestNeighborAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/algorithms/RandomAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/main.cpp.obj CMakeFiles/tsp.dir/src/parsers/ConfigParser.cpp.obj CMakeFiles/tsp.dir/src/parsers/FileParser.cpp.obj CMakeFiles/tsp.dir/src/structures/Matrix.cpp.obj CMakeFiles/tsp.dir/src/structures/MatrixGenerator.cpp.obj
+build D$:/projekty_Clion_c/optimisation-of-tsp-project1/bin/tsp.exe: CXX_EXECUTABLE_LINKER__tsp_Debug CMakeFiles/tsp.dir/src/algorithms/AlgorithmManager.cpp.obj CMakeFiles/tsp.dir/src/algorithms/BruteForceAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/algorithms/NearestNeighborAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/algorithms/RandomAlgorithm.cpp.obj CMakeFiles/tsp.dir/src/main.cpp.obj CMakeFiles/tsp.dir/src/parsers/ConfigParser.cpp.obj CMakeFiles/tsp.dir/src/parsers/FileParser.cpp.obj CMakeFiles/tsp.dir/src/structures/Matrix.cpp.obj CMakeFiles/tsp.dir/src/structures/MatrixGenerator.cpp.obj
   FLAGS = -g
   LINK_FLAGS = -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\tsp.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = tsp.exe
+  TARGET_FILE = D:\projekty_Clion_c\optimisation-of-tsp-project1\bin\tsp.exe
   TARGET_IMPLIB = libtsp.dll.a
   TARGET_PDB = tsp.exe.dbg
 
@@ -185,7 +185,9 @@ build _deps/json-build/rebuild_cache: phony _deps/json-build/CMakeFiles/rebuild_
 # =============================================================================
 # Target aliases.
 
-build tsp: phony tsp.exe
+build tsp: phony D$:/projekty_Clion_c/optimisation-of-tsp-project1/bin/tsp.exe
+
+build tsp.exe: phony D$:/projekty_Clion_c/optimisation-of-tsp-project1/bin/tsp.exe
 
 # =============================================================================
 # Folder targets.
@@ -195,7 +197,7 @@ build tsp: phony tsp.exe
 #############################################
 # Folder: D:/projekty_Clion_c/optimisation-of-tsp-project1/cmake-build-debug
 
-build all: phony tsp.exe _deps/json-build/all
+build all: phony D$:/projekty_Clion_c/optimisation-of-tsp-project1/bin/tsp.exe _deps/json-build/all
 
 # =============================================================================
 

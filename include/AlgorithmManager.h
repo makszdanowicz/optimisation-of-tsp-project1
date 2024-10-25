@@ -15,6 +15,8 @@
 #include "ConfigParser.h"
 #include "string"
 
+
+
 class AlgorithmManager {
 private:
     MatrixGenerator matrixGenerator;
@@ -28,6 +30,7 @@ private:
     void outputIterationInfo(int iterationNumber, long long executionTime);
     void displayResultOfInstance(long long arithmeticSum, int instanceSize);
     void updateProgressBar(int currentInstance, int totalInstances);
+
 
 public:
     AlgorithmManager(const ConfigParser& config);
